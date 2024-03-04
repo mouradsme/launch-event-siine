@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Cabin:wght@500&family=IBM+Plex+Sans+Arabic:wght@500&family=Play&display=swap');
+$brandColor: #0f54ef;
+$complete: transparentize($brandColor, .8);
+* {
+    margin: 0 ;
+    padding: 0 ; 
+    user-select: none;
+    font-family: "Montserrat Arabic";
+
+}
+body {
+    position: relative; 
+    background-color: #fafafa;
+    width: 100vw;
+    overflow-x: hidden !important;
+
+}
+#header {
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+     font-family: Cabin; 
+    
+
+    & > div.menu {
+        text-align: right;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 15px;
+        justify-items: end;
+        justify-content: end;
+
+        & > .menu-item {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    & > .logo-container {
+        background: url(../assets/logo.png) center no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 55px;;
+    }
+}
+
+.section {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+#hero {
+    background: url(../assets/hero-bg.jpg) no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+    & > .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,0) 0%, $brandColor 100%);
+        display: grid;
+        place-content: center;
+        place-items: center;
+        & > .title { 
+            font-size: 3rem;
+            color: white;
+            font-weight: 900;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33);
+
+        }
+
+        & > .big-title {
+            margin-bottom: 15px;
+            position: relative;
+            line-height: .75;
+            & > h1 { 
+                font-size: 11rem;
+                font-family: "Montserrat";
+                color: white;
+                z-index: 10;
+                &:nth-child(2) {
+                    margin-left: 150px;
+
+                }
+                
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 975px) {
+    #hero {
+        & > .overlay {
+            & > .more { 
+                font-size: .9rem;
+                grid-template-columns: 1fr !important;
+            }
+            & > .title { 
+                font-size: 1.2rem;
+            }
+            & > .big-title {
+                
+                line-height: .75;
+                & > h1 { 
+                    font-size: 6rem;
+                    z-index: 10;
+                    
+                    &:nth-child(2) {
+                        margin-left: 100px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    .triangle {
+        height: 200px !important;
+        width: 200px !important;;
+    }
+    .triangle-shadow {
+        height: 200px !important;;
+        width: 200px !important;;
+    }
+    #guests > .title {
+        font-size: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #guests-list > .overlay {
+        max-height: 300px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    #hero {
+        & > .overlay {
+            & > .more { 
+                font-size: .7rem;
+                grid-template-columns: 1fr !important;
+            }
+            & > .title { 
+                font-size: 1rem;
+            }
+            & > .big-title {
+                
+                line-height: .75;
+                & > h1 { 
+                    font-size: 3.54rem;
+                    z-index: 10;
+                    
+                    &:nth-child(2) {
+                        margin-left: 70px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+#hero {
+    & > .overlay > .more {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        & > h4, & > h3 {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+            text-align: center;
+        } 
+
+    }
+
+}
+
+
+.marquee {
+    position: absolute; 
+    bottom: 0;
+    width: 100vw;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+.marquee p {
+    font-family: "Montserrat Arabic" !important;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.cta {
+    display: grid;
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    padding: 7px 22px;
+    border: solid 4px $brandColor;
+    border-radius: 17px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+    font-size: 2rem;
+}
+#presentation {
+    position: relative;
+    background-color: $brandColor;
+    text-align: justify;
+    display: grid;
+    place-content: center;
+    gap: 15px;
+    font-size: 2rem;
+    color:#fafafa;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+    overflow: none;
+
+     & > h4 {
+        margin: auto;
+        text-align: center;
+        width: 55vw;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        z-index: 10;
+     }
+
+     & > .video {
+        z-index: 10;
+        border-radius: 20px; 
+        & > video {
+            width: 100%;
+        }
+
+     }
+}
+#about {
+    z-index: 10;
+    font-size: 1.5rem;
+    width: 40vw;
+    max-width: 1366px;
+    min-width: 250px;
+    margin: auto;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    padding: 25px 45px;
+    // Glassmorph
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+#timeline  {
+    background-color: #eaf6ff;
+    text-align: center;
+    & > img {
+        height: 120px;
+        margin: auto;
+    }
+    & > h1 {
+        color: $brandColor;
+        font-size: 3rem;
+        text-align: center;
+        padding: 15px;
+        padding-top: 70px;
+        @media screen and (max-height: 400px) {
+            font-size: 1.8rem;
+            padding-top: 20px;
+            
+        }
+    }
+}
+#guests {
+    background: $brandColor;
+    padding: 50px;
+    & > h1.title {
+        position: relative;
+        z-index: 10;
+        font-family: "Montserrat Arabic";
+        text-align: center;
+        padding: 50px;
+        color: white ;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+        font-size: 4rem;
+
+    }
+}
+
+#guests-list {
+    direction: rtl;
+    max-width: 1366px;
+    min-width: 250px;
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+
+    background: url(../assets/hero-bg.jpg) no-repeat center fixed rgba(255, 255, 255, 0.2);
+    background-size: cover;
+    border-radius: 16px; 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    & > .overlay {
+        padding: 50px 25px;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,0) 0%, $brandColor 100%) fixed; 
+    
+        max-height: 500px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        & > .guest {
+            margin-top: 7px;
+            margin-right: 7px;
+            display: inline-block;
+            padding: 7px 15px;
+            & > .name {
+                font-weight: bold;
+                color: white ;
+                font-size: 1.3rem;
+                &::after {
+                    content: "\2022";
+                    font-size: 1.5rem;
+                }
+            }
+            & > .title {
+                
+                font-weight: bold;
+                color: #ccc ;
+                font-size: 0.8rem;
+            }
+            
+        }
+    }
+}
+.separation {
+    position: relative;
+}
+.accent {
+    background-color: white;
+    color: $brandColor;
+    font-size: 2.3rem;
+}
+
+.triangle {
+    content: " ";
+    height: 400px;
+    width: 400px;
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    background-color:$complete;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.33);
+    z-index: 0;
+    
+}
+.triangle-shadow {
+    content: " ";
+    height: 400px;
+    width: 400px;
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    background-color:rgba(0, 0, 0, 0.33); 
+
+    
+}
+.shape-bg-1-shadow {
+    bottom: -14% !important;
+}
+.shape-bg-2-shadow {
+    top: -14% !important;
+}
+
+.shape-bg-1 {
+    position: absolute;
+    left: 0;
+    bottom: -15%;
+    transform: rotate(90deg);
+
+}
+
+.shape-bg-2 {
+    position: absolute;
+    right: 0;
+    top: -15%;
+    transform: rotate(-90deg);
+
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $brandColor;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fff;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $complete;
+  }
+  .invitation {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+
+  }
+  .invitation-guest {
+    color: wheat;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .invitation-message {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+
+  #companies {
+    background-color: black;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    gap: 25px;
+    padding: 25px;
+
+    & > img {
+        height: 100px;
+    }
+  }
+
+  #footer {
+    background-color: black;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    gap: 25px;
+    padding: 25px;
+
+    & > a {
+        display: grid;
+        width: 30px;
+        height: 30px;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+  }
+
+  .download {
+    width: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    @media screen and (max-width: 992px) {
+        grid-template-columns: 1fr;
+    }
+    a {
+        img {
+            width: 250px;
+        }
+
+        &.website {
+            text-decoration: none;
+            color: white;
+            &.dark {
+                color: $brandColor;
+            }
+        }
+    }
+  }
+
+  #copyrights {
+    color: white;
+    margin: auto;
+  }
